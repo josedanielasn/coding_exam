@@ -20,19 +20,36 @@
 # 14
 # FooBar
 
+# def FooBar(number)
+#   (1..number).to_a.map do |x|
+#     if x % 5 == 0 && x % 3 == 0
+#       p "FooBar"
+#     elsif x % 3 == 0
+#       p "Foo"
+#     elsif x % 5 == 0
+#       p "Bar"
+#     else
+#       p x
+#     end
+#   end
+# end
+
 def FooBar(number)
-  (1..number).to_a.map do |x|
-    if x % 5 == 0 && x % 3 == 0
-    p "FooBar"
-    elsif x % 3 == 0
+  return p "Invalid input" if !(number.is_a?(Integer)) 
+  return p "Input should be greater than 0" if (number <= 0) 
+  for num in 1..number do
+    if num % 5 == 0 && num % 3 == 0
+      p "FooBar"
+    elsif num % 3 == 0
       p "Foo"
-    elsif x % 5 == 0
+    elsif num % 5 == 0
       p "Bar"
     else
-      p x
+      p num
     end
   end
 end
 
-FooBar(30)
+
+FooBar(-1)
 
